@@ -1,0 +1,19 @@
+{
+  "customer_profile": {
+    "risk_category": "High",
+    "kyc_status": "Pending",
+    "account_age_months": 2,
+    "occupation": "Import-Export",
+    "expected_monthly_volume": 300000
+  },
+  "alert": {
+    "alert_type": "Cash heavy multi-channel activity",
+    "triggered_rules": ["R-401", "R-233", "R-102"]
+  },
+  "transactions": [
+    {"amount": 96000, "type": "cash_deposit", "channel": "Cash", "timestamp": "2025-01-05T09:00:00Z"},
+    {"amount": 94000, "type": "cash_deposit", "channel": "Cash", "timestamp": "2025-01-05T09:20:00Z"},
+    {"amount": 88000, "type": "transfer", "channel": "UPI", "timestamp": "2025-01-05T09:40:00Z"},
+    {"amount": 91000, "type": "transfer", "channel": "IMPS", "timestamp": "2025-01-05T09:50:00Z"}
+  ]
+}

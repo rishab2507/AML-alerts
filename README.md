@@ -116,6 +116,28 @@ Open `http://localhost:3000` for a basic input/output UI (`public/index.html`).
 
 Use `samples/sample-alert.json` as a starting point.
 
+For the "handle a few real AML transaction monitoring scenarios" requirement, the repo now includes four concrete scenario payloads in `samples/scenarios/`:
+
+- `scenario-1-low-risk-routine.json` → expected `AUTO_CLOSE`
+- `scenario-2-structuring-pattern.json` → expected `ANALYST_REVIEW`
+- `scenario-3-high-risk-escalation.json` → expected `ESCALATE`
+- `scenario-4-llm-disagreement-low-score.json` → expected `ANALYST_REVIEW` (explicitly demonstrates the hard-rule override where low risk cannot auto-close when LLM disagrees)
+
+You can validate all scenarios end-to-end with:
+
+```bash
+npm test
+```
+
+Scenario outcome summary validated by tests:
+
+| Scenario | Combined Risk Score | LLM Disagreement | Final Decision |
+| --- | ---: | :---: | --- |
+| scenario-1-low-risk-routine | 0 | false | AUTO_CLOSE |
+| scenario-2-structuring-pattern | 55 | false | ANALYST_REVIEW |
+| scenario-3-high-risk-escalation | 100 | false | ESCALATE |
+| scenario-4-llm-disagreement-low-score | 23 | true | ANALYST_REVIEW |
+
 CLI test:
 
 ```bash
