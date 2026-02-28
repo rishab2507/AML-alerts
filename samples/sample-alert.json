@@ -1,0 +1,18 @@
+{
+  "customer_profile": {
+    "risk_category": "Medium",
+    "kyc_status": "Completed",
+    "account_age_months": 14,
+    "occupation": "Retail",
+    "expected_monthly_volume": 150000
+  },
+  "alert": {
+    "alert_type": "High Velocity Transactions",
+    "triggered_rules": ["R-102", "R-311"]
+  },
+  "transactions": [
+    {"amount": 98000, "type": "credit", "channel": "UPI", "timestamp": "2025-01-01T10:00:00Z"},
+    {"amount": 97000, "type": "credit", "channel": "UPI", "timestamp": "2025-01-01T10:03:00Z"},
+    {"amount": 99000, "type": "credit", "channel": "UPI", "timestamp": "2025-01-01T10:05:00Z"}
+  ]
+}
