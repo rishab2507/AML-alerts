@@ -1,0 +1,17 @@
+{
+  "customer_profile": {
+    "risk_category": "Low",
+    "kyc_status": "Completed",
+    "account_age_months": 36,
+    "occupation": "Salaried",
+    "expected_monthly_volume": 120000
+  },
+  "alert": {
+    "alert_type": "Single rule informational alert",
+    "triggered_rules": ["R-010"]
+  },
+  "transactions": [
+    {"amount": 22000, "type": "debit", "channel": "NEFT", "timestamp": "2025-01-01T10:00:00Z"},
+    {"amount": 18000, "type": "credit", "channel": "NEFT", "timestamp": "2025-01-02T10:00:00Z"}
+  ]
+}
